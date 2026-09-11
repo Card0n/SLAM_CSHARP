@@ -24,7 +24,7 @@ namespace tp1
 
         public double calculerMensualite()
         {
-            double montantTotal = this.montant * this.tauxInteret;
+            double montantTotal = this.montant * (1 + this.tauxInteret);
 
             double mensualite = montantTotal / this.duree;
             return mensualite;

@@ -7,9 +7,9 @@ namespace tp1
     public class Appartement : Habitable
     {
         private int etage;
-        private int ascenseur;
+        private bool ascenseur;
         private bool chauffCommun;
-        public Appartement(int unEtage, int unAscenseur, bool unChauffCommun, int unNbPieces, int unNbChambre, bool uneCave, bool unParking, string unNom, int uneValeur, string uneAdresse, int uneSurface) : base(unNbPieces, unNbChambre, uneCave, unParking, unNom, uneValeur, uneAdresse, uneSurface)
+        public Appartement(int unEtage, bool unAscenseur, bool unChauffCommun, int unNbPieces, int unNbChambre, bool uneCave, bool unParking, string unNom, int uneValeur, string uneAdresse, int uneSurface) : base(unNbPieces, unNbChambre, uneCave, unParking, unNom, uneValeur, uneAdresse, uneSurface)
         {
             this.etage = unEtage;
             this.ascenseur = unAscenseur;
@@ -26,12 +26,12 @@ namespace tp1
             this.etage = unEtage;
         }
 
-        public int getAscenseur()
+        public bool getAscenseur()
         {
             return this.ascenseur;
         }
 
-        public void setAscenseur(int unAscenseur)
+        public void setAscenseur(bool unAscenseur)
         {
             this.ascenseur = unAscenseur;
         }
