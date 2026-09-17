@@ -53,12 +53,12 @@ namespace tp1
             this.adresse = uneAdresse;
         }
 
-        public int getProfession()
+        public int getSurface()
         {
             return this.surface;
         }
 
-        public void setProfession(int uneSurface)
+        public void setSurface(int uneSurface)
         {
             this.surface = uneSurface;
         }

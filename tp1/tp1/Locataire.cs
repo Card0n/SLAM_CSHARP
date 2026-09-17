@@ -56,5 +56,12 @@ namespace tp1
         {
             this.profession = uneProfession;
         }
+
+        public override string ToString()
+        {
+            return "=== Locataire\n " + 
+                    this.nom + " " + this.prenom + " - " + this.age + " ans - " + this.profession;
+
+        }
     }
 }

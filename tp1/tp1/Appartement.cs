@@ -45,5 +45,44 @@ namespace tp1
         {
             this.chauffCommun = unChauffCommun;
         }
+
+        public override string ToString()
+        {
+            string cave = "Non";
+            if (this.getCave() == true)
+            {
+                cave = "Oui";
+            }
+
+            string parking = "Non";
+            if (this.getParking() == true)
+            {
+                parking = "Oui";
+            }
+
+            string ascenseur = "Non";
+            if (this.getAscenseur() == true)
+            {
+                parking = "Oui";
+            }
+
+            string chauffageCommun = "Non";
+            if (this.getChauffCommun() == true)
+            {
+                parking = "Oui";
+            }
+
+            return "=========== " + this.getNom() + " ===========" +
+                   "\nAdresse : " + this.getAdresse() +
+                   "\nValeur : " + this.getValeur() +
+                   "\nSurface : " + this.getSurface() +
+                   "\nBénéfice net : " + calculerRentabiliteNetMensuel() + " €" +
+                   "\nNombre de pièces : " + this.getNbPieces() +
+                   "\nNombre de chambres : " + this.getNbChambre() +
+                   "\nCaves : " + cave +
+                   "\nParking : " + parking +
+                   "\nAscenseur : " + ascenseur +
+                   "\nChauffage Commun : " + chauffageCommun;
+        }
     }
 }

@@ -46,5 +46,14 @@ namespace tp1
         {
             this.dateFin = uneDateFin;
         }
+
+        public override string ToString()
+        {
+            return "=== Bail" +
+                   "\nLoyer : " + this.loyer + " €" +
+                   "\nDate début : " + this.dateDebut +
+                   "\nDate début : " + this.dateFin;
+
+        }
     }
 }

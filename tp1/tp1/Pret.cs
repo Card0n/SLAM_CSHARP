@@ -92,6 +92,14 @@ namespace tp1
             this.dateDebut = uneDateDebut;
         }
 
-
+        public override string ToString()
+        {
+            return "=== Prêt" +
+                   "\nApport : " + this.apport + " €" +
+                   "\nMensualité : " + this.calculerMensualite() + " €" +
+                   "\nDurée : " + this.duree +
+                   "\nDate début : " + this.dateDebut +
+                   "\nCapital restant : " + calculerCapitalRestantARembourser() + " €";
+        }
     }
 }
