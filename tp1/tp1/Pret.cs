@@ -24,22 +24,38 @@ namespace tp1
 
         public double calculerMensualite()
         {
-            double montantTotal = this.montant * (1 + this.tauxInteret);
-
-            double mensualite = montantTotal / this.duree;
-            return mensualite;
+            double tauxMensuel = (this.tauxInteret/100)/12;
+            return this.montant * tauxMensuel;
         }
 
         public int obtenirNbMoisRestant()
         {
-            int nbMoisRestant = (DateTime.Now.Year - this.dateDebut.Year) * 12 + (DateTime.Now.Month - this.dateDebut.Month);
-            return nbMoisRestant;
+            DateTime dateFin = this.dateDebut.AddMonths(this.duree);
+            if (DateTime.Now >= dateFin)
+            {
+                return 0;
+            }
+
+            else
+            {
+                int nbMoisRestant = (dateFin.Year - DateTime.Now.Year) * 12 + (this.dateDebut.Month - DateTime.Now.Month);
+                return nbMoisRestant;
+            } 
         }
 
         public double calculerCapitalRestantARembourser()
         {
             double capitalRestant = this.obtenirNbMoisRestant() * this.calculerMensualite();
-            return capitalRestant; ;
+            return capitalRestant;
+        }
+        public override string ToString()
+        {
+            return "=== Prêt" +
+                   "\nApport : " + this.apport + " €" +
+                   "\nMensualité : " + this.calculerMensualite() + " €" +
+                   "\nDurée : " + this.duree +
+                   "\nDate début : " + this.dateDebut +
+                   "\nCapital restant : " + calculerCapitalRestantARembourser() + " €";
         }
 
         public double getApport()
@@ -92,14 +108,6 @@ namespace tp1
             this.dateDebut = uneDateDebut;
         }
 
-        public override string ToString()
-        {
-            return "=== Prêt" +
-                   "\nApport : " + this.apport + " €" +
-                   "\nMensualité : " + this.calculerMensualite() + " €" +
-                   "\nDurée : " + this.duree +
-                   "\nDate début : " + this.dateDebut +
-                   "\nCapital restant : " + calculerCapitalRestantARembourser() + " €";
-        }
+
     }
 }
