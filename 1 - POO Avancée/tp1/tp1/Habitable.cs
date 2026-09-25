@@ -33,7 +33,7 @@ namespace tp1
                 valeurTotal += 8000;
             }
             valeurTotal += 2000 * this.nbPieces;
-            return base.estimationBien();
+            return base.estimationBien() + valeurTotal;
         }
 
         public int getNbPieces()
